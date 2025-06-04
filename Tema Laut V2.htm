@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊 Pesan Samudra Keajaiban untuk Rizal 🌊</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Fauna+One&family=Lora:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Caveat:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            overflow-x: hidden;
+            background: linear-gradient(170deg, #041a30 0%, #0a2f4a 25%, #103d5a 50%, #185470 75%, #0d2340 100%); 
+            background-attachment: fixed;
+            animation: ultraDeepOceanAmbience 40s ease-in-out infinite alternate;
+            color: #e8f4f8; 
+            position: relative;
+            min-height: 100vh;
+            padding: 2rem 1rem; 
+        }
+
+        @keyframes ultraDeepOceanAmbience {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .waves-container { 
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            max-height: 45vh; 
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .waves-container svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .sea-foam-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh; 
+            overflow: hidden;
+            z-index: 2; 
+            pointer-events: none;
+            opacity: 0.45; 
+        }
+        .sea-foam-layer {
+            position: absolute;
+            bottom: -5vh; 
+            left: 0;
+            width: 250%; 
+            height: 120%;
+            background: linear-gradient(to top, rgba(8, 24, 40, 0.65) 0%, rgba(8, 24, 40, 0.4) 40%, rgba(8, 24, 40, 0) 100%);
+            animation: driftSeaFoamEnhanced 100s linear infinite;
+        }
+        .sea-foam-layer.sea-foam-layer-2 {
+            width: 280%;
+            animation-duration: 130s;
+            animation-delay: -35s;
+            opacity: 0.6;
+            bottom: -8vh; 
+        }
+        @keyframes driftSeaFoamEnhanced {
+            0% { transform: translateX(0%); }
+            50% { transform: translateX(-30%); } 
+            100% { transform: translateX(0%); }
+        }
+
+        .sea-sparkles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 3; 
+            pointer-events: none;
+        }
+        .sea-sparkle {
+            position: absolute;
+            width: var(--sparkle-size, 2.5px); 
+            height: var(--sparkle-size, 2.5px);
+            background: #40e0d0; 
+            border-radius: 50%;
+            box-shadow: 
+                0 0 calc(var(--sparkle-size, 2.5px) * 2) #40e0d0, 
+                0 0 calc(var(--sparkle-size, 2.5px) * 3.5) #40e0d0, 
+                0 0 calc(var(--sparkle-size, 2.5px) * 5) #87ceeb; 
+            animation: driftEnhanced 11s infinite linear; 
+            opacity: 0;
+        }
+        @keyframes driftEnhanced { 0% { transform: translate(0, 0) scale(var(--sparkle-scale-start, 0.4)); opacity: 0; } 10% { opacity: var(--sparkle-opacity, 0.8); } 50% { transform: translate(var(--sparkle-drift-x, 28px), var(--sparkle-drift-y, -38px)) scale(var(--sparkle-scale-mid, 1.1)); } 70% { opacity: calc(var(--sparkle-opacity, 0.8) * 0.7); } 90% { opacity: var(--sparkle-opacity, 0.8); } 100% { transform: translate(calc(var(--sparkle-drift-x, 28px)*0.6), calc(var(--sparkle-drift-y, -38px)*0.6)) scale(var(--sparkle-scale-end, 0.4)); opacity: 0; } }
+        
+        .sea-bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 4; 
+            pointer-events: none;
+        }
+        .sea-bubble {
+            position: absolute;
+            width: 2px; 
+            height: 2px;
+            background: #00bfff; 
+            border-radius: 50%;
+            box-shadow: 0 0 6px #00bfff, 0 0 10px #87ceeb, 0 0 3px #e0f6ff;
+            animation: seaBubbleFloatEnhanced 8.5s infinite linear; 
+            opacity: 0;
+        }
+         @keyframes seaBubbleFloatEnhanced { 0% { transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.3); opacity: 0; } 10% { opacity: 0.85; } 50% { transform: scale(1.2); } 90% { opacity: 0.85; } 100% { transform: translateY(-10vh) translateX(var(--bubble-drift-x, 48px)) rotate(380deg) scale(0.5); opacity: 0; } }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 580px; 
+            width: calc(100% - 2rem); 
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card {
+            background: rgba(4, 16, 28, 0.92); 
+            backdrop-filter: blur(16px); 
+            border: 2px solid rgba(60, 130, 160, 0.7); 
+            border-radius: 20px; 
+            padding: clamp(2rem, 5.5vw, 2.6rem); 
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8); 
+            text-align: center;
+            transform: scale(0.9) rotate(-1.5deg);
+            opacity: 0;
+            animation: cardAppearMagical 2s ease-out forwards 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes cardAppearMagical { to { transform: scale(1) rotate(0deg); opacity: 1; } }
+        .card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(80, 170, 200, 0.09) 0%, transparent 70%); animation: magicalShineDeeper 11s infinite linear; opacity: 0.5; }
+        @keyframes magicalShineDeeper { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .header-title { font-family: 'Cinzel Decorative', cursive; font-size: clamp(2.1rem, 7.2vw, 3.9rem); font-weight: 700; color: #87ceeb; margin-bottom: 1.1rem; text-shadow: 0 0 15px rgba(135, 206, 235, 0.65), 0 0 25px rgba(173, 216, 230, 0.45); animation: titleGlowMysticEnhanced 3.2s ease-in-out infinite alternate; position: relative; z-index: 2; }
+        .card.content-revealed .header-title { font-family: 'Cinzel', serif; font-size: clamp(1.75rem, 5.6vw, 2.75rem); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #b3d9e6; }
+        @keyframes titleGlowMysticEnhanced { from { text-shadow: 0 0 13px rgba(135, 206, 235, 0.6), 0 0 22px rgba(173, 216, 230, 0.4); opacity: 0.92; } to { text-shadow: 0 0 24px rgba(135, 206, 235, 0.75), 0 0 40px rgba(173, 216, 230, 0.6), 0 0 9px #f0f8ff; opacity: 1; } }
+        
+        .subtitle { 
+            font-family: 'Fauna One', serif; 
+            font-size: clamp(0.98rem, 3.9vw, 1.32rem); 
+            margin-bottom: 2.2rem; 
+            color: rgba(179, 217, 230, 0.93); 
+            font-weight: 400; 
+            animation: subtitleFadeMystic 2s ease-out 1s forwards; 
+            opacity: 0; 
+        }
+        @keyframes subtitleFadeMystic { 
+            to { opacity: 0.93; } 
+        }
+
+        #countdown { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2.2rem 0; animation: countdownAppear 2s ease-out 1.2s forwards; opacity: 0; }
+        @media (min-width: 500px) { #countdown { grid-template-columns: repeat(4, 1fr); } } @keyframes countdownAppear { to { opacity: 1; } }
+        .countdown-item { background: rgba(50, 120, 150, 0.28); border: 1px solid rgba(70, 160, 200, 0.7); border-radius: 16px; padding: 1rem; backdrop-filter: blur(9px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; box-shadow: 0 0 16px rgba(70, 160, 200, 0.45); }
+        .countdown-item:hover { transform: translateY(-8px) scale(1.08); box-shadow: 0 10px 33px rgba(15, 70, 100, 0.65), 0 0 24px rgba(70, 160, 200, 0.75); }
+        .countdown-number { font-family: 'Cinzel Decorative', cursive; font-size: clamp(1.55rem, 5.6vw, 2.35rem); font-weight: 700; color: #b3d9e6; display: block; text-shadow: 0 1px 9px rgba(0,0,0, 0.6); }
+        .countdown-label { font-family: 'Fauna One', serif; font-size: clamp(0.62rem, 2.75vw, 0.82rem); color: rgba(179, 217, 230, 0.9); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 0.5rem; font-weight: 400; }
+        .reveal-btn { background: linear-gradient(45deg, #1e5f8e, #082f47, #2e7db8); background-size: 250% 250%; color: #d8f4f8; border: 1px solid rgba(100,170,200,0.55); padding: 0.9rem 1.8rem; border-radius: 30px; font-family: 'Cinzel Decorative', cursive; font-size: clamp(0.9rem, 3.8vw, 1.1rem); font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 7px 28px rgba(3, 35, 60, 0.7), inset 0 -3px 8px rgba(0,0,0,0.4); animation: btnPulseMysticEnhanced 2.6s infinite, btnGradientShiftMystic 5s ease infinite; margin: 2.2rem 0; display: none; text-transform: uppercase; letter-spacing: 1px; }
+        @keyframes btnGradientShiftMystic { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+        @keyframes btnPulseMysticEnhanced { 0% { transform: scale(1); box-shadow: 0 7px 28px rgba(3, 35, 60, 0.7), inset 0 -3px 8px rgba(0,0,0,0.4); } 50% { transform: scale(1.04); box-shadow: 0 9px 36px rgba(3, 35, 60, 0.9), 0 0 24px #87ceeb, inset 0 -3px 8px rgba(0,0,0,0.4); } 100% { transform: scale(1); box-shadow: 0 7px 28px rgba(3, 35, 60, 0.7), inset 0 -3px 8px rgba(0,0,0,0.4); } }
+        .reveal-btn:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 11px 36px rgba(3, 35, 60, 0.8), 0 0 30px #87ceeb, inset 0 -3px 8px rgba(0,0,0,0.45); }
+        .birthday-content { display: none; animation: contentAppearMystic 2s ease-out forwards; margin-top: 2.2rem; }
+        @keyframes contentAppearMystic { 0% { opacity: 0; transform: translateY(20px) scale(0.95); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+        .birthday-message { background: rgba(70, 160, 200, 0.15); border-radius: 16px; padding: 1.6rem; margin: 1.1rem 0; border: 1px solid rgba(90, 180, 220, 0.55); backdrop-filter: blur(9px); font-size: clamp(0.9rem, 3.5vw, 1.05rem); line-height: 1.75; color: #e8f4f8; }
+        .birthday-message h2 { font-family: 'Cinzel Decorative', cursive; color: #87ceeb; margin-bottom: 0.8rem; font-size: clamp(1.5rem, 4.5vw, 2.2rem); font-weight: 700; }
+        .special-wish-btn { background: linear-gradient(45deg, #3498db, #2980b9); color: #041a30; border: 1px solid rgba(135,206,235,0.45); padding: 0.8rem 1.6rem; border-radius: 25px; font-family: 'Fauna One', serif; font-size: clamp(0.8rem, 3.2vw, 1rem); font-weight: 600; cursor: pointer; margin: 1.6rem 0; transition: all 0.3s ease; display: none; box-shadow: 0 5px 22px rgba(15, 70, 100,0.5); }
+        .special-wish-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 30px rgba(15, 70, 100,0.6), 0 0 18px #b3d9e6; }
+        .special-wish-container { display: none; background: rgba(5, 20, 35, 0.94); color: #e8f4f8; border-radius: 16px; padding: 1.8rem; margin: 1.6rem 0; box-shadow: 0 12px 42px rgba(0, 0, 0, 0.65); text-align: left; line-height: 1.8; font-size: clamp(0.88rem, 3.1vw, 0.98rem); border: 1px solid #285070; animation: fadeInSpecialWish 1s ease-out; }
+        @keyframes fadeInSpecialWish { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .special-wish-container strong { color: #87ceeb; font-weight: 600; } .special-wish-container em { color: #b3d9e6; font-style: italic; font-weight: 400; }
+        .from-siblings { text-align: right; margin-top: 1.5rem; font-style: italic; color: #b3d9e6; font-size: 0.9em; }
+        .footer { margin-top: 2.2rem; font-size: clamp(0.8rem, 2.8vw, 0.9rem); color: rgba(179, 217, 230, 0.88); font-weight: 400; font-family: 'Fauna One', serif; }
+        .rising-bubbles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 15; pointer-events: none; display: none; }
+        .rising-bubble { position: absolute; width: var(--bubble-size, 16px); height: var(--bubble-size, 16px); border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(173, 216, 230, 0.9), rgba(64, 224, 208, 0.6), rgba(0, 191, 255, 0.3)); box-shadow: 0 0 6px rgba(64, 224, 208, 0.4), inset -2px -2px 4px rgba(255, 255, 255, 0.3); animation: bubbleRiseFromDeep var(--bubble-duration, 14s) linear infinite; opacity: 0; }
+        @keyframes bubbleRiseFromDeep { 0% { transform: translateY(110vh) translateX(0px) scale(var(--bubble-scale-start, 0.3)); opacity: 0.3; } 10% { opacity: var(--bubble-opacity, 0.7); } 50% { transform: translateY(50vh) translateX(var(--bubble-drift-x-mid, 20px)) scale(var(--bubble-scale-mid, 1.0)); opacity: var(--bubble-opacity, 0.8); } 90% { opacity: var(--bubble-opacity, 0.6); } 100% { transform: translateY(-10vh) translateX(var(--bubble-drift-x-end, 40px)) scale(var(--bubble-scale-end, 1.2)); opacity: 0; } }
+        .badge { position: absolute; top: -11px; right: -11px; background: linear-gradient(135deg, #2e7db8, #0a3d5a); color: #d8f4f8; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 23px; animation: badgeSway 3s ease-in-out infinite; box-shadow: 0 5px 18px rgba(3, 35, 60, 0.6); z-index: 100; }
+        @keyframes badgeSway { 0%, 100% { transform: rotate(-5deg) scale(1); } 50% { transform: rotate(5deg) scale(1.1); } }
+
+         @media (max-width: 768px) {
+            body { padding: 1rem 0.5rem; }
+            .container { width: calc(100% - 1rem); margin-top: 1rem; margin-bottom: 1rem; }
+            .card { padding: 2rem; }
+            .waves-container { max-height: 40vh; }
+            #countdown { gap: 0.8rem; } .countdown-item { padding: 0.9rem; } .header-title { font-size: clamp(2.0rem, 7vw, 3.5rem); } .card.content-revealed .header-title { font-size: clamp(1.7rem, 5.2vw, 2.6rem); } .subtitle { font-size: clamp(0.9rem, 3.5vw, 1.25rem); } .birthday-message h2 { font-size: clamp(1.4rem, 4vw, 2.0rem); }
+        }
+        @media (max-width: 480px) {
+            .waves-container { max-height: 35vh; }
+            .card { padding: 1.3rem; border-radius: 15px; } #countdown { gap: 0.5rem; } .countdown-item { padding: 0.7rem; border-radius: 10px; } .reveal-btn { padding: 0.8rem 1.5rem; font-size: 0.85rem; } .header-title { font-size: clamp(1.8rem, 7.2vw, 3.2rem); } .card.content-revealed .header-title { font-size: clamp(1.5rem, 4.8vw, 2.3rem); } .subtitle { font-size: clamp(0.85rem, 3.8vw, 1.15rem); margin-bottom: 1.8rem; } .birthday-message h2 { font-size: clamp(1.3rem, 3.8vw, 1.8rem); }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Background Wave Layers (Ocean Waves) -->
+    <div class="waves-container">
+        <svg viewBox="0 0 1200 350" preserveAspectRatio="xMidYMax slice" style="z-index: 1; opacity: 0.65;">
+            <defs><filter id="faintBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/></filter></defs>
+            <path d="M0,350 L0,240 Q130,220 290,260 T580,230 T850,270 T1100,220 T1200,250 L1200,350 Z" fill="#041a30" filter="url(#faintBlur)"/>
+            <path d="M0,350 L0,250 Q100,240 250,270 T520,250 T780,280 T1020,240 T1200,260 L1200,350 Z" fill="#051c32" transform="translate(30, 5) scale(1.02)" filter="url(#faintBlur)"/>
+        </svg>
+        <svg viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" style="z-index: 2; opacity: 0.8; bottom: -3vh;">
+            <path d="M0,320 L0,210 Q160,190 340,230 T630,200 T900,240 T1150,190 T1200,220 L1200,320 Z" fill="#0a2f4a"/>
+            <path d="M0,320 L0,220 Q140,210 300,240 T590,220 T860,250 T1120,210 T1200,230 L1200,320 Z" fill="#103d5a" transform="translate(-25, 6) scale(1.03)"/>
+            <circle cx="150" cy="195" r="12" fill="#06274a" opacity="0.5"/> <circle cx="170" cy="185" r="10" fill="#06274a" opacity="0.5"/>
+            <circle cx="450" cy="190" r="15" fill="#06274a" opacity="0.5"/> <circle cx="480" cy="180" r="13" fill="#06274a" opacity="0.5"/>
+            <circle cx="750" cy="200" r="14" fill="#06274a" opacity="0.5"/> <circle cx="785" cy="190" r="11" fill="#06274a" opacity="0.5"/>
+            <circle cx="1050" cy="185" r="16" fill="#06274a" opacity="0.5"/> <circle cx="1020" cy="195" r="12" fill="#06274a" opacity="0.5"/>
+        </svg>
+        <svg viewBox="0 0 1200 280" preserveAspectRatio="xMidYMax slice" style="z-index: 3; opacity: 0.95; bottom: -6vh;">
+            <path d="M0,280 L0,190 Q190,170 380,210 T680,180 T980,220 T1200,190 L1200,280 Z" fill="#185470"/>
+            <path d="M0,280 L0,200 Q170,190 360,220 T660,200 T960,230 T1200,210 L1200,280 Z" fill="#0e3c58" transform="translate(20, 7) scale(1.02)"/>
+            <ellipse cx="250" cy="175" rx="25" ry="18" fill="#0a2f4a" opacity="0.6"/> <ellipse cx="280" cy="165" rx="22" ry="16" fill="#0a2f4a" opacity="0.6"/>
+            <ellipse cx="550" cy="170" rx="30" ry="20" fill="#0a2f4a" opacity="0.6"/> <ellipse cx="590" cy="160" rx="28" ry="18" fill="#0a2f4a" opacity="0.6"/>
+            <ellipse cx="850" cy="180" rx="28" ry="19" fill="#0a2f4a" opacity="0.6"/> <ellipse cx="820" cy="190" rx="25" ry="17" fill="#0a2f4a" opacity="0.6"/>
+        </svg>
+    </div>
+
+    <div class="sea-foam-container">
+        <div class="sea-foam-layer"></div>
+        <div class="sea-foam-layer sea-foam-layer-2"></div>
+    </div>
+
+    <div class="sea-sparkles" id="sea-sparkles-container"></div>
+    <div class="sea-bubbles" id="sea-bubbles-container"></div>
+
+    <div class="container">
+        <div class="card" id="mainCard">
+            <div class="badge">🌊</div>
+            
+            <h1 id="main-title" class="header-title">Bisikan Samudra Biru</h1>
+            <p id="subtitle" class="subtitle">Untuk Muhammad Rizal Setiawan, Penjaga Jiwa yang Bijaksana ✨</p>
+            
+            <div id="countdown">
+                <div class="countdown-item"> <span id="days" class="countdown-number">00</span> <div class="countdown-label">Hari</div> </div>
+                <div class="countdown-item"> <span id="hours" class="countdown-number">00</span> <div class="countdown-label">Jam</div> </div>
+                <div class="countdown-item"> <span id="minutes" class="countdown-number">00</span> <div class="countdown-label">Menit</div> </div>
+                <div class="countdown-item"> <span id="seconds" class="countdown-number">00</span> <div class="countdown-label">Detik</div> </div>
+            </div>
+
+            <button id="reveal-btn" class="reveal-btn"> 🫧 Sentuh Keajaiban Samudra 🫧 </button>
+
+            <div id="birthday-content" class="birthday-content">
+                <div class="birthday-message"> <h2>🌊 Selamat Ulang Tahun, Rizal! 🌊</h2> <p>Saudaraku, Muhammad Rizal Setiawan, semoga di usiamu yang baru ini, jalan hidupmu diberkahi ketenangan dan kekuatan laksana samudra yang senantiasa mengalir dan memberi kehidupan.</p> </div>
+                <div class="birthday-message"> <p>🌟 Semoga setiap langkahmu diterangi cahaya mutiara kebijaksanaan, hatimu sekuat arus dalam yang tak pernah surut, dan jiwamu setenang permukaan laut di pagi yang cerah. Teruslah mengalir menjadi pribadi yang menginspirasi! 🌟</p> </div>
+                <div class="birthday-message"> <p>💖 Kami semua, keluargamu, mendoakan yang terbaik untukmu. Nikmati hari istimewamu ini dengan sukacita, kedamaian, dan rasa syukur sedalam lautan. 💖</p> </div>
+                <button id="special-wish-btn" class="special-wish-btn"> 📜 Buka Gulungan Doa dari Hati Samudra 📜 </button>
+                <div id="special-wish-container" class="special-wish-container"></div>
+            </div>
+
+            <div class="footer"> 🐚 Dari Hati yang Tulus, Semua Saudaramu 🐚 </div>
+        </div>
+    </div>
+
+    <div class="rising-bubbles-container" id="rising-bubbles-container"></div>
+
+    <script>
+        const seaSparklesContainer = document.getElementById('sea-sparkles-container');
+        const seaBubblesContainer = document.getElementById('sea-bubbles-container');
+        const risingBubblesContainer = document.getElementById('rising-bubbles-container');
+        
+        const numSeaSparkles = window.innerWidth < 768 ? 150 : 300; 
+        const numSeaBubbles = window.innerWidth < 768 ? 35 : 70; 
+
+        function createStaticSeaSparkles() {
+            if (!seaSparklesContainer) return;
+            seaSparklesContainer.innerHTML = ''; 
+            for (let i = 0; i < numSeaSparkles; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sea-sparkle';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                sparkle.style.animationDelay = Math.random() * 11 + 's';
+                sparkle.style.animationDuration = (Math.random() * 6 + 5) + 's'; 
+                sparkle.style.setProperty('--sparkle-drift-x', (Math.random() - 0.5) * 100 + 'px');
+                sparkle.style.setProperty('--sparkle-drift-y', (Math.random() - 0.5) * 100 + 'px');
+                sparkle.style.setProperty('--sparkle-opacity', (Math.random() * 0.45 + 0.45).toFixed(2)); 
+                
+                let size;
+                const sizeRoll = Math.random();
+                if (sizeRoll < 0.30) { 
+                    size = Math.random() * 0.8 + 1.0; 
+                } else if (sizeRoll < 0.60) { 
+                    size = Math.random() * 1.0 + 1.8; 
+                } else if (sizeRoll < 0.85) { 
+                    size = Math.random() * 1.2 + 2.8; 
+                } else if (sizeRoll < 0.95) { 
+                    size = Math.random() * 1.0 + 4.0; 
+                } else { 
+                    size = Math.random() * 1.0 + 5.0; 
+                }
+                sparkle.style.setProperty('--sparkle-size', size.toFixed(1) + 'px');
+
+                sparkle.style.setProperty('--sparkle-scale-start', (Math.random() * 0.25 + 0.35).toFixed(2));
+                sparkle.style.setProperty('--sparkle-scale-mid', (Math.random() * 0.35 + 0.85).toFixed(2));
+                sparkle.style.setProperty('--sparkle-scale-end', (Math.random() * 0.25 + 0.35).toFixed(2));
+                seaSparklesContainer.appendChild(sparkle);
+            }
+        }
+
+        function createSeaBubbles() {
+            if (!seaBubblesContainer) return;
+            seaBubblesContainer.innerHTML = ''; 
+            for (let i = 0; i < numSeaBubbles; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'sea-bubble';
+                bubble.style.left = Math.random() * 100 + 'vw';
+                bubble.style.animationDelay = Math.random() * 8.5 + 's'; 
+                bubble.style.setProperty('--bubble-drift-x', (Math.random() - 0.5) * 120 + 'px'); 
+                seaBubblesContainer.appendChild(bubble);
+            }
+        }
+
+        function createRisingBubbles() {
+            if (!risingBubblesContainer) return;
+            risingBubblesContainer.innerHTML = ''; 
+            risingBubblesContainer.style.display = 'block';
+            const bubbleCount = window.innerWidth < 768 ? 35 : 60; 
+            
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'rising-bubble';
+                
+                // Generate random bubble size (8px to 24px)
+                const size = Math.random() * 16 + 8;
+                bubble.style.setProperty('--bubble-size', size + 'px');
+                
+                // Random position
+                bubble.style.left = Math.random() * 100 + 'vw';
+                
+                // Random animation delay (spread across 18 seconds)
+                bubble.style.animationDelay = Math.random() * 18 + 's'; 
+                
+                // Random duration (12-18 seconds for slow, natural movement)
+                const duration = Math.random() * 6 + 12;
+                bubble.style.setProperty('--bubble-duration', duration + 's');
+                
+                // Random drift values for natural movement
+                bubble.style.setProperty('--bubble-drift-x-mid', (Math.random() - 0.5) * 60 + 'px'); 
+                bubble.style.setProperty('--bubble-drift-x-end', (Math.random() - 0.5) * 100 + 'px'); 
+                
+                // Random opacity for variation
+                bubble.style.setProperty('--bubble-opacity', (Math.random() * 0.3 + 0.5).toFixed(2));
+                
+                // Random scale progression
+                bubble.style.setProperty('--bubble-scale-start', (Math.random() * 0.2 + 0.2).toFixed(2));
+                bubble.style.setProperty('--bubble-scale-mid', (Math.random() * 0.3 + 0.8).toFixed(2));
+                bubble.style.setProperty('--bubble-scale-end', (Math.random() * 0.4 + 1.0).toFixed(2));
+                
+                risingBubblesContainer.appendChild(bubble);
+            }
+        }
+
+        const cardEl = document.getElementById('mainCard');
+        const countdownEl = document.getElementById('countdown');
+        const birthdayContentEl = document.getElementById('birthday-content');
+        const mainTitleEl = document.getElementById('main-title');
+        const subtitleEl = document.getElementById('subtitle');
+        const specialWishBtn = document.getElementById('special-wish-btn');
+        const specialWishContainer = document.getElementById('special-wish-container');
+        const revealBtn = document.getElementById('reveal-btn');
+
+        const birthdayDate = new Date(2025, 4, 23, 0, 0, 0).getTime();
+        const thirtyDaysInMs = 30 * 24 * 60 * 60 * 1000;
+
+        const specialWishContent = `
+            <strong>Untuk Saudaraku Tercinta, Muhammad Rizal Setiawan, Sang Penjaga Jiwa yang Bijaksana,</strong><br><br>
+            Di hari istimewa ini, dari kedalaman samudra kasih sayang keluarga, kami merangkai doa tulus yang mengalir kuat dan meluap tinggi untukmu...<br><br>
+            <strong>🌊 Semoga Arus Hidupmu Semakin Kokoh Mengalir di Samudra Kebenaran dan Kebijaksanaan:</strong><br>
+            Rizal, kami berdoa semoga Allah SWT senantiasa menguatkan aliranmu di atas dasar iman dan takwa yang dalam. Laksana arus samudra yang kokoh mengalir mencari muara kehidupan, semoga engkau pun selalu menemukan kekuatan dalam ajaran-Nya, dan kebijaksanaan dalam setiap gelombang yang kau tempuh.<br><br>
+            <strong>🫧 Semoga Gelombang-gelombang Kehidupanmu Dipenuhi Buih Kebaikan yang Berkilau:</strong><br>
+            Kami berharap, setiap ombak usahamu menghasilkan mutiara-mutiara kebaikan yang berharga. Semoga kilau prestasimu semakin berkilau, memberikan ketenangan bagi dirimu dan manfaat bagi sesama. Biarlah setiap hembusan angin laut membawa kabar baik tentang dirimu, dan setiap ombak menyegarkan amal-amalmu.<br><br>
+            <strong>☀️ Semoga Cahaya Ilahi Selalu Menerobos Kedalaman Harapanmu:</strong><br>
+            Walau terkadang perjalanan hidup terasa dalam dan gelap seperti samudra di malam hari, kami berdoa agar cahaya petunjuk dari Allah SWT selalu menemukan celah untuk menerangi aliranmu. Semoga hatimu tak pernah kehilangan harapan, dan jiwamu senantiasa menemukan ketenangan di bawah naungan kasih sayang-Nya.<br><br>
+            <strong>📜 Bisikan Doa dari Kedalaman Samudra Keluarga:</strong><br>
+            <em>Ya Allah, Tuhan Yang Maha Pemelihara Alam Semesta,<br>
+            Di hari kelahiran saudara kami, Muhammad Rizal Setiawan, kami memohon kehadirat-Mu:<br>
+            Alirkanlah dalam dirinya semangat yang tak pernah surut, hati yang senantiasa bersyukur laksana mutiara yang berkilau, dan jiwa yang selalu dekat dengan-Mu seperti embun laut yang menyucikan.<br>
+            Jadikanlah ia samudra yang tenang, tempat berlindung bagi yang membutuhkan, dan penebar mutiara-mutiara kebaikan di mana pun ia berada.<br>
+            Berkahilah usianya, luaskanlah rezekinya, mudahkanlah segala urusannya, dan jadikanlah ia hamba-Mu yang shalih.<br>
+            Ya Allah, dengarkanlah bisikan doa dari kedalaman hati kami ini. Aamiin ya Rabbal 'alamin.</em><br><br>
+            Selamat bertambah usia, saudaraku! Teruslah mengalir, menginspirasi, dan menjadi kebanggaan kami semua. 🌊✨💙
+            <div class="from-siblings">- Dengan Cinta Sedalam Samudra dan Seluas Hamparan Laut, Semua Saudaramu -</div>
+        `;
+
+        const audio = new Audio('https://cdn.sanity.io/files/zhgxj6ko/production/20096b856584fe42be47145334272a834c663ffe.mp3');
+        audio.loop = true;
+        let musicStarted = false;
+
+        if (revealBtn) {
+            revealBtn.addEventListener('click', () => {
+                revealBtn.style.display = 'none';
+                if (cardEl) cardEl.classList.add('content-revealed');
+                if (mainTitleEl) { mainTitleEl.innerHTML = "🌊 KEBIJAKSANAAN SAMUDRA UNTUKMU 🌊"; }
+                if (subtitleEl) { 
+                    subtitleEl.innerHTML = "Rizal, Sebuah Pesan dari Kedalaman Laut Telah Tiba! 📜"; 
+                    subtitleEl.style.animation = 'none'; 
+                    subtitleEl.style.opacity = '0.93';   
+                }
+                if (birthdayContentEl) birthdayContentEl.style.display = 'block';
+                if (specialWishBtn) specialWishBtn.style.display = 'inline-block';
+                createRisingBubbles(); 
+                if (!musicStarted) {
+                    const playPromise = audio.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(_ => {
+                            musicStarted = true; console.log("Musik dimulai otomatis.");
+                        }).catch(error => {
+                            console.error("Autoplay musik gagal:", error);
+                            const playOnAnyInteraction = () => {
+                                if (!musicStarted) {
+                                    audio.play().then(() => {
+                                        musicStarted = true;
+                                        document.removeEventListener('click', playOnAnyInteraction);
+                                        document.removeEventListener('touchstart', playOnAnyInteraction);
+                                    }).catch(e => console.error("Gagal memulai musik bahkan setelah interaksi tambahan:", e));
+                                }
+                            };
+                            document.addEventListener('click', playOnAnyInteraction);
+                            document.addEventListener('touchstart', playOnAnyInteraction);
+                        });
+                    }
+                }
+            });
+        }
+
+        if (specialWishBtn) {
+            specialWishBtn.addEventListener('click', () => {
+                if (specialWishContainer) {
+                    specialWishContainer.innerHTML = specialWishContent;
+                    specialWishContainer.style.display = 'block';
+                    specialWishContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
+
+        function updateCountdown() {
+            const now = Date.now();
+            const targetBirthdayTime = birthdayDate; 
+            if (now > targetBirthdayTime + thirtyDaysInMs) {
+                if (countdownEl) countdownEl.style.display = 'none';
+                if (revealBtn) revealBtn.style.display = 'none';
+                if (cardEl) cardEl.classList.add('content-revealed'); 
+                if (mainTitleEl) mainTitleEl.innerHTML = "🌊 Jejak Samudra Menuju 2026 🌊";
+                if (subtitleEl) {
+                    subtitleEl.innerHTML = "Rizal, samudra menyimpan bisikan harapan untuk tahun depan...";
+                    subtitleEl.style.animation = 'none'; 
+                    subtitleEl.style.opacity = '0.93';
+                }
+                if (birthdayContentEl) {
+                    birthdayContentEl.style.display = 'block'; 
+                    birthdayContentEl.innerHTML = `<div class="birthday-message"><h2>🌟 Menantikan Musim Baru Bersamamu 🌟</h2><p>Saudaraku Rizal, seperti samudra yang berkilau kembali dengan harapan baru, kami menantikan perayaan kebijaksanaanmu di tahun 2026. Semoga sisa tahun ini memberimu ketenangan dan inspirasi.</p></div><div class="birthday-message"><p>Biarlah arus-arus kebaikanmu semakin deras, dan gelombang-gelombang prestasimu mencapai pantai yang lebih tinggi. Samudra jiwa kami selalu merindukan kehadiranmu yang menenangkan.</p></div><div class="birthday-message"><p>💖 Dengan doa yang tak pernah surut, kami menantimu di perayaan berikutnya. Semoga setiap hari adalah aliran menuju kesempurnaan. 💖</p></div>`;
+                    if (specialWishBtn) specialWishBtn.style.display = 'none'; 
+                    if (specialWishContainer) specialWishContainer.style.display = 'none';
+                }
+                clearInterval(countdownInterval); 
+                return;
+            } else if (now >= targetBirthdayTime) { 
+                if (countdownEl) countdownEl.style.display = 'none';
+                if (revealBtn && birthdayContentEl && birthdayContentEl.style.display !== 'block') {
+                    revealBtn.style.display = 'inline-block';
+                }
+                if (mainTitleEl && (!cardEl || !cardEl.classList.contains('content-revealed'))) {
+                   mainTitleEl.innerHTML = "✨ KEAJAIBAN SAMUDRA TELAH TERUNGKAP! ✨";
+                }
+                if (subtitleEl && (!cardEl || !cardEl.classList.contains('content-revealed'))) {
+                   subtitleEl.innerHTML = "Rizal, sebuah pesan dari jiwa samudra menantimu! 📜<br>Sentuh tombol di bawah untuk mengungkapnya!";
+                   subtitleEl.style.animation = 'none'; 
+                   subtitleEl.style.opacity = '0.93';   
+                }
+            } else { 
+                const distance = targetBirthdayTime - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+                if (countdownEl) countdownEl.style.display = 'grid'; 
+                if (revealBtn) revealBtn.style.display = 'none'; 
+                if (birthdayContentEl) birthdayContentEl.style.display = 'none';
+                if (mainTitleEl) mainTitleEl.innerHTML = "Bisikan Samudra Biru";
+                if (subtitleEl) {
+                    subtitleEl.innerHTML = "Untuk Muhammad Rizal Setiawan, Penjaga Jiwa yang Bijaksana ✨";
+                    subtitleEl.style.animation = ''; 
+                    subtitleEl.style.opacity = '0'; 
+                }
+                if (cardEl) cardEl.classList.remove('content-revealed'); 
+            }
+        }
+
+        createStaticSeaSparkles();
+        createSeaBubbles(); 
+        
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        if (cardEl) {
+            let initialTransformStyle = ''; 
+            let isMouseOverCard = false;
+            cardEl.addEventListener('animationend', (event) => {
+                if (event.animationName === 'cardAppearMagical') {
+                    initialTransformStyle = window.getComputedStyle(cardEl).transform;
+                    if (initialTransformStyle === 'none') initialTransformStyle = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+                    cardEl.addEventListener('mousemove', handleCardMouseMove);
+                    cardEl.addEventListener('mouseenter', () => { isMouseOverCard = true; });
+                    cardEl.addEventListener('mouseleave', () => { isMouseOverCard = false; resetCardTransform(); });
+                }
+            });
+            function handleCardMouseMove(e) { if (!cardEl || !isMouseOverCard) return; const rect = cardEl.getBoundingClientRect(); const cardX = rect.left + rect.width / 2; const cardY = rect.top + rect.height / 2; const x = e.clientX - cardX; const y = e.clientY - cardY; const rotateX = -y / 50; const rotateY = x / 50; let baseTransform = initialTransformStyle.includes('perspective') ? initialTransformStyle : `perspective(1000px) ${initialTransformStyle}`; if (!baseTransform.includes('scale')) { baseTransform += ' scale(1)'; } baseTransform = baseTransform.replace(/rotateX\([^)]+\)/g, '').replace(/rotateY\([^)]+\)/g, '').trim(); cardEl.style.transition = 'transform 0.05s linear'; cardEl.style.transform = `${baseTransform} rotateX(${rotateX}deg) rotateY(${rotateY}deg)`; }
+            function resetCardTransform() { if (cardEl) { cardEl.style.transition = 'transform 0.3s ease-out'; cardEl.style.transform = initialTransformStyle || 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)'; } }
+        }
+    </script>
+</body>
+</html>
